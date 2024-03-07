@@ -37,7 +37,7 @@ function updateDetector() {
 	detectors=document.querySelectorAll(".example.active")[0].querySelectorAll(".chat-detector")
 	if(this.checked) {
 	  // Checkbox is checked
-	  console.log(bodies[1].childNodes)
+	  //console.log(bodies[1].childNodes)
 	  bodies.forEach(b => b.childNodes.forEach(e => !e.classList || e.classList.add('active')))
 	  detectors.forEach(e => !e.classList || e.classList.add('active'))
 	} else {
