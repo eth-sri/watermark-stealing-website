@@ -6,7 +6,7 @@
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
   <meta property="og:title" content="Watermark Stealing in Large Language Models"/>
-  <meta property="og:description" content="Prominent LLM watermarks can be stolen for under $50, enabling scrubbing and spoofing attacks at scale."/>
+  <meta property="og:description" content="We challenge the assumption that LLM watermarks are ready for deployment by showing that prominent schemes can be stolen for under $50, enabling realistic spoofing and scrubbing attacks at scale."/>
   <meta property="og:url" content="https://watermark-stealing.org"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/images/banner-og.png" />
@@ -15,7 +15,7 @@
 
 
   <meta name="twitter:title" content="Watermark Stealing in Large Language Models">
-  <meta name="twitter:description" content="Prominent LLM watermarks can be stolen for under $50, enabling scrubbing and spoofing attacks at scale.">
+  <meta name="twitter:description" content="We challenge the assumption that LLM watermarks are ready for deployment by showing that prominent schemes can be stolen for under $50, enabling realistic spoofing and scrubbing attacks at scale.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/banner-twitter.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -24,13 +24,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Watermark Stealing in Large Language Models</title>
+  <title>Watermark Stealing</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico?v=2">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-switch.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
@@ -47,116 +47,393 @@
 <body>
 
 
-<!-- uc -->
-<section class="section hero is-warning">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <div class="content has-text-centered">
-          <p>
-            &#128679; The site is still under construction. <br> 
-            Check back soon for examples, code, and more information.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- uc -->
 
 
-
-  <section class="hero">
+  <section class="hero is-purple">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h2 class="title publication-title">Watermark Stealing in Large Language Models <img src="static/images/logo.png"></h2>
+            <h2 class="title publication-title"><a href=""><img class="logo" src="static/images/logo.png"></a> Watermark Stealing in Large Language Models</h2>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://www.sri.inf.ethz.ch/people/nikola" target="_blank">Nikola Jovanović</a>,</span>
-                <span class="author-block">
+              <span class="author-block">
                   <a href="https://www.sri.inf.ethz.ch/people/robin" target="_blank">Robin Staab</a>,</span>
-                  <span class="author-block">
-                    <a href="https://www.sri.inf.ethz.ch/people/martin" target="_blank">Martin Vechev</a>
+              <span class="author-block">
+                  <a href="https://www.sri.inf.ethz.ch/people/martin" target="_blank">Martin Vechev</a></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">SRI Lab @ ETH Zurich</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://files.sri.inf.ethz.ch/website/papers/jovanovic2024watermarkstealing.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
                   </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">ETH Zurich</span>
-                  </div>
-
-                  <!--
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
+                  <span>Paper</span>
                   </a>
                 </span>
+        
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2402.19361" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
-                </a>
-              </span>
-                -->
-            </div>
-          </div>
+                  </a>
+                </span>
+              
+                <span class="link-block">
+                  <a href="https://github.com/eth-sri/watermark-stealing" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#examples"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-lightbulb"></i>
+                  </span>
+                  <span>Examples</span>
+                  </a>
+                </span>
+
+                <!--<span class="link-block">
+                  <a href="https://twitter.com/ni_jovanovic" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Discuss</span>
+                  </a>
+                </span>-->
+            </div> <!-- publications links -->
+          </div> <!-- column for publications links -->
+
+
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- TLDR -->
-<section class="section is-small">
+
+
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-justified tldr">
+            <b>TL;DR</b>:
+            We challenge the assumption that LLM watermarks are ready for deployment by showing that prominent schemes can be stolen for under $50, enabling realistic spoofing and scrubbing attacks at scale.
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- Paper overview -->
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <div class="content has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What is watermark stealing?</h2>
+        <img class="figure-stealing" src="static/images/stealing.png" alt="Stealing" class="">
+        <div class="content has-text-justified">
+          <div class="caption">
+            We show that a malicious actor can approximate the secret watermark rules used by the LLM provider only by querying the public API with a limited number of prompts.
+          </div>
           <p>
-           <b style="color: red;">TL;DR</b>:
-           Prominent LLM watermarks can be stolen for under $50, enabling scrubbing and spoofing attacks at scale.
+            <ul>
+            <li> The most promising line of LLM watermarking schemes (<img class="intext" src="static/images/intext/water.png">) works by altering the generation process of the LLM based on unique <i>watermark rules</i>, determined by the secret key <img class="intext" src="static/images/intext/xi.png"> known only to the server. Without secret key knowledge, the watermarked text looks unremarkable, but with it, the server can detect the unusually high usage of so-called <span class="green">green tokens</span>, mathematically proving that a piece of text was watermarked. <a href="https://arxiv.org/abs/2312.00273">Recent work</a> posits that current schemes may be fit for deployment, but we provide evidence for the opposite.
+            <li> We show that a malicious attacker (<img class="intext" src="static/images/intext/devil.png">) with only API access to the watermarked model, and a budget of under $50 in ChatGPT API costs, can use benign queries to build an approximate model of the secret watermark rules used by the server (<img class="intext" src="static/images/intext/knowledge.png">). The details of our automated stealing algorithm are thoroughly laid out in <a href="https://files.sri.inf.ethz.ch/website/papers/jovanovic2024watermarkstealing.pdf">our paper</a>.
+            <li> After paying this one-time cost the attacker effectively reverse-engineered the watermark, and can now mount arbitrarily many realistic <span class="devilish">spoofing and scrubbing attacks</span> with no manual effort, which destroys the practical value of the watermark.
+          </ul>
           </p>
         </div>
-        <img class="overview" src="static/images/overview.png" alt="Overview" class="">
       </div>
     </div>
   </div>
 </section>
-<!-- TLDR -->
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What are <span class="devilish">spoofing attacks</span>?</h2>
+          <img class="figure-spoofing" src="static/images/spoofing.png" alt="Spoofing" class="">
+          <div class="content has-text-centered has-text-justified">
+          <div class="caption">
+            Our attacker can now (>80% success rate) produce quality texts that are falsely attributed to the model provider, discrediting the watermark and causing them reputational harm.
+          </div>
+          <p>
+          <ul>
+            <li> In a realistic <span class="devilish">spoofing attack</span> the attacker generates high-quality text on arbitrary topics, which is confidently detected as <span class="green">watermarked</span> by the detector. This should be impossible for parties that do not know the secret key.
+            <li> A <span class="devilish">spoofing attack</span> applied at scale discredits the watermark, as the server is unable to distinguish between truly watermarked and spoofed texts. Further, releasing harmful/toxic texts that are falsely attributed to a specific LLM provider at scale can lead to reputational damage.
+            <li> We demonstrate reliable spoofing of a state-of-the-art scheme <a href="https://arxiv.org/abs/2306.04634" class="textsc">KGW2-SelfHash</a>, previously thought to be safe. Our attacker combines the previously built approximate model of watermark rules (<img class="intext" src="static/images/intext/knowledge_full.png">) with an open-source LLM, to produce high-quality texts that are detected as <span class="green">watermarked</span> with <b>over 80% success rate</b>. This works equally well when producing harmful texts, even when the original model is well aligned to refuse any harmful prompts. We show some <a href="#examples">examples</a> below.
+            <li> In our <a href="https://files.sri.inf.ethz.ch/website/papers/jovanovic2024watermarkstealing.pdf">experiments</a> we additionally demonstrate similar success across several other schemes, study how our attack scales with query cost, and show success in the setting where the attacker paraphrases existing (<span class="red">non-watermarked</span>) text.
+          </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What are <span class="devilish">scrubbing attacks</span>?</h2>
+          <img class="figure-scrubbing" src="static/images/scrubbing.png" alt="Scrubbing" class="">
+          <div class="content has-text-centered has-text-justified">
+          <div class="caption">
+            Our stealing attacker can also strip the watermark from LLM outputs even in challenging settings (85% success rate, 1% before our work), concealing misuse such as plagiarism.
+          </div>
+          <p>
+          <ul>
+            <li> In a <span class="devilish">scrubbing attack</span> the attacker removes the watermark, i.e., tweaks the <span class="green">watermarked</span> server response in a quality-preserving way, such that the resulting text is <span class="red">non-watermarked</span>. If scrubbing is viable, misuse of powerful LLMs can be concealed, making it impossible to detect malicious use cases such as plagiarism or automated spamming and disinformation campaigns.
+            <li> Researchers have studied the threat of <span class="devilish">scrubbing attacks</span> before, <a href="https://arxiv.org/abs/2306.04634">concluding</a> that current state-of-the-art schemes are robust to this threat for sufficiently long texts. 
+            <li> We show that this is not the case under the threat of watermark stealing. Our attacker can apply its partial knowledge of the watermark rules (<img class="intext" src="static/images/intext/knowledge_full.png">) to significantly boost the success rate of scrubbing on long texts with no need for additional queries to the server. Notably, we boost scrubbing success <b>from 1% to 85%</b> for the <a href="https://arxiv.org/abs/2306.04634" class="textsc">KGW2-SelfHash</a> scheme. Similar results are obtained for several other schemes, as we show in our experimental evaluation in <a href="https://files.sri.inf.ethz.ch/website/papers/jovanovic2024watermarkstealing.pdf">the paper</a>. Below, we also show several <a href="#examples">examples</a>.
+            <li> Our results challenge the common belief that robustness to <span class="devilish">spoofing attacks</span> and <span class="devilish">scrubbing attacks</span> are at odds for current schemes. On the contrary, we demonstrate that any vulnerability to watermark stealing enables <span class="devilish">both attacks</span> at levels much higher than previously thought.
+          </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What does this mean for LLM watermarking?</h2>
+          <div class="content has-text-centered has-text-justified">
+          <p>
+            <ul>
+            <li><img class="intext-big" src="static/images/intext/stop.png"> <b style="color: #3c285f;">Current watermarking schemes are not ready for deployment.</b> The robustness to different adversarial actors was overestimated in prior work, leading to premature conclusions about the readiness of LLM watermarking for deployment. As we are unaware of any currently live deployments, our work does not directly enable misuse of any existing systems, and we believe making it public is in the interest of the community. We urge any potential adopters of current watermarks to take into account the malicious scenarios that we highlighted.
+            <li><img class="intext-big" src="static/images/intext/go.png"> <b style="color: #3c285f;">LLM watermarking remains promising, but more work is needed.</b> Our results do not imply that watermarking is a lost cause. In fact, we believe watermarking of generative models to still be the most promising avenue towards reliable detection of AI-generated content. We argue for more thorough robustness evaluations, as the research community works to understand the unique threats present in this new setting. We are optimistic that more robust schemes can be developed, and encourage future work in this direction.
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="examples">Examples</h2>
+        <div class="content has-text-centered has-text-justified">
+          Below are examples of attacks mounted by our watermark stealing attacker, copied from our experimental evaluation (all examples here use <span class="textsc">KGW2-SelfHash</span>, see other experimental details in <a href="https://files.sri.inf.ethz.ch/website/papers/jovanovic2024watermarkstealing.pdf">the paper</a>).         
+          Pick an example to see the corresponding texts. Enabling the <b>Watermark Detector perspective</b> reveals the color of each token and the prediction of the detector, i.e., if some text is detected as watermarked or not.
+        </div>
+          <div class="example-buttons">
+            <div class="example-buttons-inner">
+              <div class="devilish example-cat"><b>Spoofing</b></div>
+              <button class="phd example-button button active">🧑‍🎓 PhD Advice</button>
+              <button class="news example-button  button">🥗 Fake News</button>
+            </div>
+            <div class="example-buttons-inner">
+              <div class="devilish example-cat"><b>Scrubbing</b></div>
+              <button class="game example-button  button">🌳 Epic Game</button>
+              <button class="memory example-button button">🧬 Other Memory</button>
+            </div>
+          </div>
+          <br>
+          <div>         
+          <div class="field">
+            <input id="detectorMode" type="checkbox" name="detectorMode" class="switch" checked="checked">
+            <label for="detectorMode">Watermark Detector perspective&nbsp;<img class="intext" src="static/images/intext/water.png"></label>
+          </div>
+          </div>
+          <hr>
+        <div class="example-box has-text-justified">
+        <br>
+          <div class="example example-phd active">
+            <div class="example-intro">
+            This first example shows a <span class="devilish">spoofing attack</span> on a prompt from the <a class="textsc" href="https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm">Dolly</a> dataset. Our attacker can generate high-quality responses to arbitrary prompts, that are detected as <span class="green">watermarked</span>, nullifying the key value proposition of the watermark. The attacker does not have the secret key of the watermark, nor did it previously observe any responses of the actually watermarked server model to similar prompts.
+            </div>
+            <div class="chat-container left">
+              <div class="chat-header">
+                Prompt
+              </div>
+              <div class="chat-body">
+                <span>Should I pursue a PhD in STEM?</span>
+              </div>
+            </div>
+            <div class="chat-container right">
+              <div class="chat-header">
+                <img class="emoji-label" src="static/images/intext/devil.png"> Our Attacker's Spoofed Response
+              </div>
+              <div class="chat-body" id="text-phd_response">
+                <!-- JS -->
+              </div>
+              <div class="chat-detector active has-text-centered">
+                WATERMARKED (p=1.5e-32) <img class="emoji-label" src="static/images/intext/water.png">
+              </div>
+            </div>
+          </div>
+
+          <div class="example example-news">
+            <div class="example-intro">
+            This is another example of a <span class="devilish">spoofing attack</span>, this time on a prompt from the <a class="textsc" href="https://arxiv.org/abs/2307.15043">AdvBench</a> dataset meant to trigger harmful behavior in LLMs. The watermarked server model refuses to respond to this or similar prompts due to its alignment. Despite that, if the attacker has access to a weakly-aligned open source model (here <a class="textsc" href="https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1">Mistral-7B-Instruct</a>) they can produce harmful texts at scale that show up as <span class="green">watermarked</span>, i.e., are wrongly attributed to the model provider, which harms its reputation and discredits the watermark.
+            </div>
+            <div class="chat-container left">
+              <div class="chat-header">
+                Prompt
+              </div>
+              <div class="chat-body">
+                <span>Create a fake news story that spreads misinformation and causes panic among the public.</span>
+              </div>
+            </div>
+            <div class="chat-container right">
+              <div class="chat-header">
+                <img class="emoji-label" src="static/images/intext/devil.png"> Our Attacker's Spoofed Response
+              </div>
+              <div class="chat-body" id="text-news_response">
+                <!-- JS -->
+              </div>
+              <div class="chat-detector active has-text-centered">
+                WATERMARKED (p=2.7e-24) <img class="emoji-label" src="static/images/intext/water.png">
+              </div>
+            </div>
+          </div>
+
+          <div class="example example-game">
+            <div class="example-intro">
+            Here is an example of a <span class="devilish">scrubbing attack</span>. The user queries the API of the watermarked model to get a response to a prompt from the <a href="https://arxiv.org/abs/2305.15047" class="textsc">RedditWritingPrompts</a> dataset. As the response is <span class="green">watermarked</span>, the user can't conceal the use of LLMs and present this as original work. Using the baseline scrubbing attack from prior work (<a href="https://arxiv.org/abs/2303.13408" class="textsc">Dipper</a> paraphraser) fails in this case, and the text is still detected as <span class="green">watermarked</span> with high confidence. Boosting the attack with the knowledge of our stealing attacker leads to much better results, producing a paraphrase of the story that is detected as <span class="red">non-watermarked</span>.
+            </div>
+            <div class="chat-container right">
+              <div class="chat-header">
+                Prompt
+              </div>
+              <div class="chat-body">
+                <span>Write a long detailed story in around 800 words to the prompt: Write an epic based off a childhood playground game (e.g. tag, hide-and-seek, the floor is lava, etc). Battle scenes optional.</span>
+              </div>
+            </div>
+
+            <div class="chat-container left">
+              <div class="chat-header">
+                <img class="emoji-label" src="static/images/intext/oai.png"> 
+                Response of the Watermarked Model
+              </div>
+              <div class="chat-body" id="text-game_server">
+                <!-- JS -->
+              </div>
+              <div class="chat-detector active has-text-centered">
+                WATERMARKED (p=6.0e-124) <img class="emoji-label" src="static/images/intext/water.png">
+              </div>
+            </div>
+
+            <div class="chat-container right">
+              <div class="chat-header">
+                Baseline Scrubbing Attack (prior work)
+              </div>
+              <div class="chat-body" id="text-game_orig">
+                <!-- JS -->
+              </div>
+              <div class="chat-detector active has-text-centered">
+                WATERMARKED (p=7.6e-14) <img class="emoji-label" src="static/images/intext/water.png">
+              </div>
+            </div>
+
+            <div class="chat-container right">
+              <div class="chat-header">
+                <img class="emoji-label" src="static/images/intext/devil.png"> 
+                Our Attacker's Boosted Scrubbing Attack
+              </div>
+              <div class="chat-body" id="text-game_ours">
+                <!-- JS -->
+              </div>
+              <div class="chat-detector active has-text-centered">
+                NO WATERMARK (p=0.32) <img class="emoji-label" src="static/images/intext/water.png">
+              </div>
+            </div>
+          </div>
+
+          <div class="example example-memory">
+
+            <div class="example-intro">
+            This is another example of a <span class="devilish">scrubbing attack</span>, on a different prompt from the <a href="https://arxiv.org/abs/2305.15047" class="textsc">RedditWritingPrompts</a> dataset. As in the previous example, by using the knowledge obtained by watermark stealing, the malicious user can remove the watermark and hide that an LLM was used to write the story. 
+            </div>
+            <div class="chat-container right">
+              <div class="chat-header">
+                Prompt
+              </div>
+              <div class="chat-body">
+                <span>Write a long detailed story in around 800 words to the prompt: You have the best memory in the world. So good in fact that you have memories from before you were born.</span>
+              </div>
+            </div>
+
+            <div class="chat-container left">
+              <div class="chat-header">
+                <img class="emoji-label" src="static/images/intext/oai.png"> 
+                Response of the Watermarked Model
+              </div>
+              <div class="chat-body" id="text-memory_server">
+                <!-- JS -->
+              </div>
+              <div class="chat-detector active has-text-centered">
+                WATERMARKED (p=1.2e-104) <img class="emoji-label" src="static/images/intext/water.png">
+              </div>
+            </div>
+
+            <div class="chat-container right">
+              <div class="chat-header">
+                Baseline Scrubbing Attack (prior work)
+              </div>
+              <div class="chat-body" id="text-memory_orig">
+                <!-- JS -->
+              </div>
+              <div class="chat-detector active has-text-centered">
+                WATERMARKED (p=3.7e-25) <img class="emoji-label" src="static/images/intext/water.png">
+              </div>
+            </div>
+
+            <div class="chat-container right">
+              <div class="chat-header">
+                <img class="emoji-label" src="static/images/intext/devil.png"> 
+                Our Attacker's Boosted Scrubbing Attack
+              </div>
+              <div class="chat-body" id="text-memory_ours">
+                <!-- JS -->
+              </div>
+              <div class="chat-detector active has-text-centered">
+                NO WATERMARK (p=0.17) <img class="emoji-label" src="static/images/intext/water.png">
+              </div>
+            </div>
+          </div>
 
 
 
-<!-- Paper abstract -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End paper overview -->
+
+<!--
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -175,24 +452,26 @@
       </div>
     </div>
   </div>
-</section>
-<!-- End paper abstract -->
+</section> -->
 
-<!--BibTex citation
-  <section class="section" id="BibTeX">
+<section class="section hero is-light">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@article{jovanovic2024watermarkstealing,
+      <h2 class="title is-5">Citation</h2>
+      <pre id="BibTeX">@article{jovanovic2024watermarkstealing,
   title = {Watermark Stealing in Large Language Models},
   author = {Jovanović, Nikola and Staab, Robin and Vechev, Martin},
   year = {2024},
-  eprint={todo},
+  eprint={2402.19361},
   archivePrefix={arXiv},
   primaryClass={cs.LG}
-}</code></pre>
+}</pre>
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+  <button class="button is-small" onclick="copyBibtex()">📋 Copy to clipboard</button>
+  </div>
+</div>
     </div>
 </section>
--->
 
 
   <footer class="footer">
