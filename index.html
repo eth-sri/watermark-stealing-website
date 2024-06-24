@@ -74,7 +74,7 @@
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper</span>
+                    <span>Paper (ICML 2024)</span>
                   </a>
                 </span>
 
@@ -211,8 +211,8 @@
                 aligned to refuse any harmful prompts. We show some <a href="#examples">examples</a> below.
               <li> In our <a
                   href="https://files.sri.inf.ethz.ch/website/papers/jovanovic2024watermarkstealing.pdf">experiments</a>
-                we additionally demonstrate similar success across several other schemes, study how our attack scales
-                with query cost, and show success in the setting where the attacker paraphrases existing (<span
+                we additionally demonstrate similar success across several other schemes and experimental settings, study how our attack
+                scales with query cost, and show success in the setting where the attacker paraphrases existing (<span
                   class="red">non-watermarked</span>) text.
             </ul>
             </p>
@@ -230,8 +230,8 @@
           <img class="figure-scrubbing" src="static/images/scrubbing.png" alt="Scrubbing" class="">
           <div class="content has-text-centered has-text-justified">
             <div class="caption">
-              Our stealing attacker can also strip the watermark from LLM outputs even in challenging settings (85%
-              success rate, 1% before our work), concealing misuse such as plagiarism.
+              Our attacker can also strip the watermark from LLM outputs even in challenging settings (>80%
+              success, below 25% before our work), concealing misuse such as plagiarism.
             </div>
             <p>
             <ul>
@@ -246,10 +246,10 @@
               <li> We show that this is not the case under the threat of watermark stealing. Our attacker can apply its
                 partial knowledge of the watermark rules (<img class="intext"
                   src="static/images/intext/knowledge_full.png">) to significantly boost the success rate of scrubbing
-                on long texts with no need for additional queries to the server. Notably, we boost scrubbing success
-                <b>from 1% to 85%</b> for the <a href="https://arxiv.org/abs/2306.04634"
-                  class="textsc">KGW2-SelfHash</a> scheme. Similar results are obtained for several other schemes, as we
-                show in our experimental evaluation in <a
+                on long texts with no need for additional queries to the server. Notably, we boost the scrubbing success of a popular
+                paraphraser from <b>from 1% to 85%</b> for the <a href="https://arxiv.org/abs/2306.04634"
+                  class="textsc">KGW2-SelfHash</a> scheme. The best baseline we are aware of achieves <b>below 25%</b>.
+                Similar results are obtained for several other schemes, as we show in our experimental evaluation in <a
                   href="https://files.sri.inf.ethz.ch/website/papers/jovanovic2024watermarkstealing.pdf">the paper</a>.
                 Below, we also show several <a href="#examples">examples</a>.
               <li> Our results challenge the common belief that robustness to <span class="devilish">spoofing
@@ -522,10 +522,8 @@
       <pre id="BibTeX">@article{jovanovic2024watermarkstealing,
   title = {Watermark Stealing in Large Language Models},
   author = {Jovanović, Nikola and Staab, Robin and Vechev, Martin},
-  year = {2024},
-  eprint={2402.19361},
-  archivePrefix={arXiv},
-  primaryClass={cs.LG}
+  jorunal = {{ICML}},
+  year = {2024}
 }</pre>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
